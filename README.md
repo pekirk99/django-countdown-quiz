@@ -64,6 +64,7 @@ A simple Django quiz game project with dynamic questions and a countdown timer. 
 ## Demo
 
 ![image](https://github.com/user-attachments/assets/b0b5fc93-31d2-4ca9-9c7d-3dfa8fb936fd)
+![image](https://github.com/user-attachments/assets/f9bd3bbb-8a70-44e0-b81e-bbdf30dbe6b6)
 ![image](https://github.com/user-attachments/assets/34d8626e-7c16-493b-82da-1b9316df69c0)
 ![image](https://github.com/user-attachments/assets/3ce65d63-abf9-40e8-a580-d3135ace0b5f)
 
