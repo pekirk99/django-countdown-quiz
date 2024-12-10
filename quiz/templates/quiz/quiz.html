@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Game</title>
+    <script>
+        let timerDuration = 15; // Timer duration in seconds
+        let timer;
+
+        function startTimer() {
+            const timerElement = document.getElementById("timer");
+            timer = setInterval(() => {
+                if (timerDuration > 0) {
+                    timerElement.innerText = `Time Left: ${timerDuration} seconds`;
+                    timerDuration--;
+                } else {
+                    clearInterval(timer);
+                    alert("Time's up! Submitting your answers...");
+                    document.getElementById("quiz-form").submit();
+                }
+            }, 1000);
+        }
+
+        window.onload = startTimer;
+    </script>
+</head>
+<body>
+    <h1>Quiz Game</h1>
+    <p id="timer">Time Left: 15 seconds</p>
+    <form id="quiz-form" method="post">
+        {% csrf_token %}
+        {% for question in questions %}
+            <div>
+                <p>{{ question.text }}</p>
+                <input type="radio" name="question_{{ question.id }}" value="A"> {{ question.options.A }}<br>
+                <input type="radio" name="question_{{ question.id }}" value="B"> {{ question.options.B }}<br>
+                <input type="radio" name="question_{{ question.id }}" value="C"> {{ question.options.C }}<br>
+                <input type="radio" name="question_{{ question.id }}" value="D"> {{ question.options.D }}<br>
+            </div>
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
